@@ -15,4 +15,11 @@ describe('testing route with params', () => {
       done();
     });
   });
+  it('testing with a POST', (done) => {
+    const numParam = NaN;
+    restWell.inject({ method: 'POST', url: `/${numParam}` }, (res) => {
+      expect(res.statusCode).toBe(404);
+      done();
+    });
+  });
 });
