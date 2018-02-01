@@ -1,7 +1,10 @@
-const http = require('http');
-// const serveEm = require('./serveEm');
+const serveEm = require('./serveEm');
+
 describe('testing server with GET', () => {
-  it('testing / route', () => {
-    http.get('http://127.0.0.1:8080/', response => expect(response).toBe(true));
+  it('testing / route', (done) => {
+    serveEm.inject({ method: 'GET', url: '/' }, (res) => {
+      expect(res.result).toBe('Hello hapi');
+      done();
+    });
   });
 });

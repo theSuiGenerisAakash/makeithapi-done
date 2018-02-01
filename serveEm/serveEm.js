@@ -4,16 +4,16 @@ const server = new Hapi.Server();
 
 server.connection({
   host: 'localhost',
-  port: 8080,
+  // port: Number(process.argv[2] || 8080),
+  port: 8654,
 });
 
 server.route({
   path: '/',
   method: 'GET',
   handler: (request, response) => {
-    response(true);
+    response('Hello hapi');
   },
 });
 
-server.start();
 module.exports = server;
