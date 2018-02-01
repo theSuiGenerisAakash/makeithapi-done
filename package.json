@@ -1,0 +1,31 @@
+{
+  "name": "makeithapi-done",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theSuiGenerisAakash/makeithapi-done.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theSuiGenerisAakash/makeithapi-done/issues"
+  },
+  "homepage": "https://github.com/theSuiGenerisAakash/makeithapi-done#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "hapi": "^16.6.2"
+  }
+}
