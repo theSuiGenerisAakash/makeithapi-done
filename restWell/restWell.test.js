@@ -8,4 +8,11 @@ describe('testing route with params', () => {
       done();
     });
   });
+  it('testing with a number', (done) => {
+    const numParam = NaN;
+    restWell.inject({ method: 'GET', url: `/${numParam}` }, (res) => {
+      expect(res.result).toBe('Hello NaN');
+      done();
+    });
+  });
 });
