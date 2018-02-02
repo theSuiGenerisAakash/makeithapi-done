@@ -7,4 +7,10 @@ describe('testing request routing', () => {
       done();
     });
   });
+  it('testing for a file with POST', (done) => {
+    direct.inject({ method: 'POST', url: '/foo/bar/baz/file.html' }, (res) => {
+      expect(res.statusCode).toBe(404);
+      done();
+    });
+  });
 });
