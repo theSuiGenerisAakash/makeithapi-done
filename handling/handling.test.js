@@ -8,4 +8,11 @@ describe('testing for file response', () => {
       done();
     });
   });
+  it('testing with POST', (done) => {
+    const options = { method: 'POST', url: '/file' };
+    handling.inject(options, (res) => {
+      expect(res.statusCode).toBe(404);
+      done();
+    });
+  });
 });
