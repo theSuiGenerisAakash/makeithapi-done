@@ -13,4 +13,10 @@ describe('testing data injection into templates', () => {
       done();
     });
   });
+  it('testing with a JSON string', (done) => {
+    views.inject({ method: 'GET', url: '/?name={ "hello": "world" }' }, (res) => {
+      expect(res.result).toBe('BMSCE { &quot;hello&quot;: &quot;world&quot; }\n');
+      done();
+    });
+  });
 });
