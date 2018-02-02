@@ -7,4 +7,10 @@ describe('testing data injection into templates', () => {
       done();
     });
   });
+  it('testing with no paramters', (done) => {
+    views.inject({ method: 'GET', url: '/?name=' }, (res) => {
+      expect(res.result).toMatch('BMSCE ');
+      done();
+    });
+  });
 });
