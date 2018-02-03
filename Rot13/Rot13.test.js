@@ -7,4 +7,10 @@ describe('testing ROT13 on file streams', () => {
       done();
     });
   });
+  it('testing ROT13 on a sample html', (done) => {
+    Rot13.inject({ method: 'GET', url: '/file?name=sample2.html' }, (res) => {
+      expect(res.result).toBe('<uryyb></uryyb>\n');
+      done();
+    });
+  });
 });
