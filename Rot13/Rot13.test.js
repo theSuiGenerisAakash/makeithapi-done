@@ -13,4 +13,10 @@ describe('testing ROT13 on file streams', () => {
       done();
     });
   });
+  it('testing ROT13 with POST', (done) => {
+    Rot13.inject({ method: 'POST', url: '/file?name=sample2.html' }, (res) => {
+      expect(res.result.statusCode).toBe(404);
+      done();
+    });
+  });
 });
