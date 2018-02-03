@@ -11,7 +11,7 @@ server.register(vision, (err) => {
 
 server.connection({
   host: 'localhost',
-  port: 8080,
+  port: Number(process.argv[2] || 8080),
 });
 
 server.route({
@@ -26,5 +26,14 @@ server.views({
   },
   path: Path.join(__dirname, 'templates'),
 });
+
+if (!module.parent) {
+  server.start((err) => {
+    if (err) {
+      throw err;
+    }
+    console.log(`Server running at: ${server.info.uri}`);
+  });
+}
 
 module.exports = server;
