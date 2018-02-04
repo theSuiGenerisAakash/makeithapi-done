@@ -4,21 +4,21 @@ const Joi = require('joi');
 const server = new Hapi.Server();
 server.connection({
   host: 'localhost',
-  port: 8080,
+  port: Number(process.argv[2] || 8080),
 });
 
 function handler(request, reply) {
-  reply(`${request.params.fingers} is valid`);
+  reply(`${request.params.breed} is valid`);
 }
 
 server.route({
-  path: '/chickens/{fingers}',
+  path: '/chickens/{breed}',
   method: 'GET',
   handler,
   config: {
     validate: {
       params: {
-        fingers: Joi.string().required(),
+        breed: Joi.string().required(),
       },
     },
   },
