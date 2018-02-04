@@ -8,4 +8,10 @@ describe('testing validation on params', () => {
       done();
     });
   });
+  it('testing with no params', (done) => {
+    valdn.inject({ method: 'GET', url: '/chickens' }, (res) => {
+      expect(res.statusCode).toBe(404);
+      done();
+    });
+  });
 });
