@@ -11,7 +11,7 @@ server.register(vision, (err) => {
 
 server.connection({
   host: 'localhost',
-  port: 8080,
+  port: Number(process.argv[2] || 8080),
 });
 
 server.route({
@@ -24,7 +24,7 @@ server.views({
   engines: {
     html: handlebars,
   },
-  helpersPath: './helperEx/helpers',
+  helpersPath: 'helpers',
   path: Path.join(__dirname, 'templates'),
 });
 
