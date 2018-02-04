@@ -1,1 +1,1 @@
-module.exports = context => `${context.data.root.query.foo}${context.data.root.query.bar}`;
+module.exports = context => `${context.data.root.query.name}${context.data.root.query.suffix}`;
